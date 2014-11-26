@@ -177,8 +177,60 @@ We describe how we applied the KLM to the three main use cases of StudyPal.
 All three use cases, or tasks, assume that the user is already logged in to StudyPal and located at the home page.
 
 \subsubsection{Joining a Group}
+The user must first click on the ``List all groups'' button, then click on a group to display group details, read the displayed information and then hit 'Apply'.
+
+\textbf{List all groups:}
+This requires the user to home (H) their hand to the mouse, point (P) at the button with the mouse, and click (K) the button using the left mouse button.
+The user then waits for StudyPal to respond (R).
+
+In the KLM, this is encoded as: \emph{HPKR}.
+
+The KLM predicts that homing takes 0.4 seconds, pointing takes 1.1 seconds, and the key press takes 0.2 seconds.
+This results in a time of 1.7 seconds to list all existing groups, assuming negligible system response time.
+
+\textbf{Display group details:}
+Now that the system has displayed all existing groups, the user must find one they are interested in joining.
+The user should already have their hand on the mouse from the previous action, so we will not factor a homing action in here.
+This task requires the user to point (P) with their mouse to the name of the group they want to join, click (K), and then wait for the system to respond (R).
+
+In the KLM, this is encoded as: \emph{PKR}.
+
+The KLM predicts the pointing to take 1.1 seconds, the button press to take 0.2 seconds, and the system response time is assumed to be negligible.
+This results in a time of 1.3 seconds to display the details of a group.
+
+\textbf{Apply:}
+Once displayed with the group details, the user needs to hit the 'Apply' button to submit their application to the group leader.
+The user should already have their hand on the mouse from the previous action, so we will not factor a homing action in here.
+This task requires the user to point (P) with their mouse to the 'Apply' button, click (K), and then wait for the system to respond (R).
+
+In the KLM, this is encoded as: \emph{PKR}.
+
+The KLM predicts the pointing to take 1.1 seconds, the button press to take 0.2 seconds, and the system response time is assumed to be negligible.
+This results in a time of 1.3 seconds to apply to a group.
+
+The user must now wait for the study group leader to review their application before being allowed formal entrance into the group.
+
+\textbf{Total time:}
+Combining the above encodings we get \emph{HPKRPKRPKR} in the KLM and a total time of 4.3 seconds to list all of the existing groups.
+
 
 \subsubsection{Creating a Group}
+The user must first click on the ``Create group'' button, enter the group title, enter the course name, select the frequency of meeting, and then submit the form.
+Other optional information fields exist but we exclude them from this model as they are not part of the minimum action needed to create a group.
+
+\textbf{Click ``Create group'':}
+
+\textbf{Enter group title:}
+
+\textbf{Enter course name:}
+
+\textbf{Select frequency:}
+
+\textbf{Submit form:}
+
+\textbf{Total time:}
+
+
 
 \subsubsection{Send Notification to Group}
 
