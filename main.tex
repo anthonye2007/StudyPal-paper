@@ -179,7 +179,7 @@ All three use cases, or tasks, assume that the user is already logged in to Stud
 \subsubsection{Joining a Group}
 The user must first click on the ``List all groups'' button, then click on a group to display group details, read the displayed information and then hit 'Apply'.
 
-\textbf{List all groups:}
+\paragraph{List all groups:}
 This requires the user to home (H) their hand to the mouse, point (P) at the button with the mouse, and click (K) the button using the left mouse button.
 The user then waits for StudyPal to respond (R).
 
@@ -188,7 +188,7 @@ In the KLM, this is encoded as: \emph{HPKR}.
 The KLM predicts that homing takes 0.4 seconds, pointing takes 1.1 seconds, and the key press takes 0.2 seconds.
 This results in a time of 1.7 seconds to list all existing groups, assuming negligible system response time.
 
-\textbf{Display group details:}
+\paragraph{Display group details:}
 Now that the system has displayed all existing groups, the user must find one they are interested in joining.
 The user should already have their hand on the mouse from the previous action, so we will not factor a homing action in here.
 This task requires the user to point (P) with their mouse to the name of the group they want to join, click (K), and then wait for the system to respond (R).
@@ -198,7 +198,7 @@ In the KLM, this is encoded as: \emph{PKR}.
 The KLM predicts the pointing to take 1.1 seconds, the button press to take 0.2 seconds, and the system response time is assumed to be negligible.
 This results in a time of 1.3 seconds to display the details of a group.
 
-\textbf{Apply:}
+\paragraph{Apply:}
 Once displayed with the group details, the user needs to hit the 'Apply' button to submit their application to the group leader.
 The user should already have their hand on the mouse from the previous action, so we will not factor a homing action in here.
 This task requires the user to point (P) with their mouse to the 'Apply' button, click (K), and then wait for the system to respond (R).
@@ -218,7 +218,7 @@ Combining the above encodings we get \emph{HPKRPKRPKR} in the KLM and a total ti
 The user must first click on the ``Create group'' button, enter the group title, enter the course name, select the frequency of meeting, and then submit the form.
 Other optional information fields exist but we exclude them from this model as they are not part of the minimum action set needed to create a group.
 
-\textbf{Click ``Create group'':}
+\paragraph{Click ``Create group'':}
 From the home page, the user needs to click the `Create group' button.
 This requires the user to home (H) their hand to the mouse, point (P) at the button with the mouse, and click (K) the button using the left mouse button.
 The user then waits for StudyPal to respond (R).
@@ -228,7 +228,7 @@ In the KLM, this is encoded as: \emph{HPKR}.
 The KLM predicts that homing takes 0.4 seconds, pointing takes 1.1 seconds, and the key press takes 0.2 seconds.
 This results in a time of 1.7 seconds to display the form for group creation, assuming negligible system response time.
 
-\textbf{Enter group title:}
+\paragraph{Enter group title:}
 After the group creation form has been displayed, the user must enter a title for this group.
 For the purposes of this model we will assume that the average group name consists of two words, and that each word consists of an average length of five characters\footnote{http://www.wolframalpha.com/input/?i=average+word+length}.
 In totaling the characters, we find that there are 10 characters plus one delimiter such as a space or dash resulting in an average group title length of 11 characters.
@@ -240,7 +240,7 @@ This results in a KLM encoding of \emph{PKH MKKKKK K MKKKKK}.
 The KLM predicts that pointing will take 1.1 seconds, each of the 12 key presses will take 0.2 seconds, the homing will take 0.4 seconds, and the single act of mental preparation will take 1.35 seconds.
 This results in a total time of 4.89 seconds to enter the title of the group.
 
-\textbf{Enter course name:}
+\paragraph{Enter course name:}
 After entering the group title, the user must enter the name of the course this group will be studying.
 Most university courses can be represented with a three letter department indicator (e.g. CSC for Computer Science) and a three digit course number (e.g. 554).
 
@@ -250,7 +250,7 @@ Combining these encodings with needed mental preparation results in a KLM encodi
 The KLM predicts that the homing act will take 0.4 seconds, each of the 8 key presses will take 0.2 seconds, and the mental preparation will take 1.35 seconds.
 This results in a total time of 3.35 seconds to enter the course name.
 
-\textbf{Select frequency:}
+\paragraph{Select frequency:}
 After entering the course name, the user must select one of three frequencies (meet once, meet weekly, or meet monthly) from a drop down menu.
 We select `Once' by default as we expect this to be the most common of the three.
 If the user wants to keep the default frequency of `Once' then this entire step can be skipped.
@@ -261,10 +261,23 @@ This results in a KLM encoding of \emph{HKMKK}.
 The KLM predicts that the homing act will take 0.4 seconds, each of the 3 key presses will take 0.2 seconds, and the mental preparation will take 1.35 seconds.
 Thus frequency selection is predicted to take a total time of 2.35 seconds.
 
-\textbf{Submit form:}
+\paragraph{Submit form:}
+After entering all required information, the user must submit the form by hitting the ENTER button.
+
+The user must home (H) to the keyboard, hit the ENTER key (K), and wait for the system to respond (R).
+This results in a KLM encoding of \emph{HKR}.
+The KLM predicts that the homing will take 0.4 seconds, the single keypress will take 0.2 seconds, and we assume a negligible system response time.
+Thus we predict form submission to take 0.6 seconds.
 
 \textbf{Total time:}
+Here we sum the time of each subtask.
+Clicking `Create group' is predicted to take 1.7 seconds,
+entering the group title should take 4.89 seconds,
+entering the course name should take 3.35 seconds,
+selecting the frequency should take 2.35 seconds,
+and form submission should take 0.6 seconds.
 
+This results in a total time of 12.89 seconds to create a group.
 
 
 \subsubsection{Send Notification to Group}
