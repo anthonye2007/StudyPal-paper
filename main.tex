@@ -102,9 +102,60 @@ A description of the design of the system. You should also describe its evolutio
 
 \emph{The system clearly reflect users' concerns, as demonstrated by the extensive use of relevant HCI techniques for discovery and design. User feedback has been taken into account in the design, as illustrated by specific examples (e.g., quotes from users and descriptions of design changes). Best practices in HCI development have been followed.}
 
+% user interviews
+% sketches
+% development
+% user feedback (where I'm the user)
+
+We wanted to create a very simple user interface that could be quickly used by an expert.
+We also wanted our website to be easy to use for novices, that is, we wanted novices to be able to complete basic tasks in the website without requiring outside help.
+The specific tasks that we wanted to support are joining an existing group, creating a new group, and sending notifications to the group members.
+
+We first started by interviewing several students who have previously used study groups for their classes in order to better determine the scope of our system.
+
+After extracting requirements from the interviews, we sketched mockups of the website using pencil and paper.
+%todo These sketches are included in ____
+The sketches helped us identify challenges that we would face.
+
+One challenge was how to integrate the user's schedule into our system.
+One user said that ``even though courses appear on my schedule, I don't always have to go to them and would still be available to meet.''
+This highlights the issue that a schedule may not be accurate for all users and thus we don't want to hide groups that meet during these times in case the user actually wants to attend those meetings.
+However, many users would \emph{not} want to see groups that conflict with classes.
+To resolve this issue we decided to indicate conflicting times by dimming the background color of those groups when trying to find a group.
+%todo implement the dimming
+
+
+In interviews, one participant said that ``the level of distraction increases with the number of people in the group.''
+The same participant said that 5 study group members was the upper limit for productivity, however, other interview participants said they frequently had study groups with around 5 members.
+This shows that a generally small group is more desirable, but further research is needed to see how group size impacts study group results.
+We decided to prominently display the current group size for potential applicants so that they could make their own decision if they wanted to join a group with 5 or more members.
+
+Another issue was group member requirements.
+We discovered in interviews that study groups are usually formed via personal connections and many subjective decisions were made to determine who to invite to the group.
+One participant said that all study group members ``need a common background'', for example, each member should have at least passing familiarity with each section of material.
+Defining this 'common background' is an example of such subjective decisions.
+We did not want to implement complex qualification algorithms without basing decisions on solid research, so we allow group leaders to create subjective qualifications and decide themselves.
+Group leaders enter desired qualifications of group members, other students can apply after reading through the qualifications, and then the leader reviews each application and can either accept or reject them.
+
+
+Frequency of study groups is another issue that emerged from the interviews.
+Some students typically formed a study group that only met once per exam while others met on a regular basis.
+We extracted discrete intervals of once, weekly, and monthly for study groups.
+
+
+
+
 
 \section{Analytical Interface Evaluation}
- An analytical evaluation of your interface, using modeling techniques you judge to be most appropriate. 
+An analytical evaluation of your interface, using modeling techniques you judge to be most appropriate. 
+ 
+% use the KLM
+% explain why using the KLM
+
+% how long does it take to complete each task?
+% join a group
+% create a group
+% send a notification to the group
  
 \emph{A specific analytical technique modeling technique is correctly applied; its choice is well-justified and the results are explained in detail. The analytical technique is such that it provides predictions or explanations of actual user performance. Insights from the analytical evaluation are discussed. The relevance of the modeling results to usability are made clear.}
 
